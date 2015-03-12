@@ -103,18 +103,23 @@ On Android, support for CSP within the system webview starts with KitKat (but is
 
 Here are some example CSP declarations for your `.html` pages:
 
+    <!-- Good default declaration:
+        * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+        * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+        * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+            * Enable inline JS: add 'unsafe-inline' to default-src
+            * Enable eval(): add 'unsafe-eval' to default-src
+    -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *">
+
     <!-- Allow requests to foo.com -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' foo.com"/>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' foo.com">
 
     <!-- Enable all requests, inline styles, and eval() -->
-    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src: 'self' 'unsafe-inline' 'unsafe-eval' "/>
-
-    <!-- Allow requests to https://ssl.gstatic.com/accessibility/javascript/android/ (required for TalkBack on Android) -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://ssl.gstatic.com/accessibility/javascript/android/"/>
+    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src: 'self' 'unsafe-inline' 'unsafe-eval'">
 
     <!-- Allow XHRs via https only -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:"/>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:">
 
-    <!-- Allow data: URLs within iframes -->
-    <!-- Note: You would also need an <allow-navigation href="data:*" /> in your config.xml -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; frame-src 'self' data:"/>
+    <!-- Allow iframe to https://cordova.apache.org/ -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; frame-src 'self' https://cordova.apache.org">
