@@ -17,7 +17,7 @@
     "whitelist",
     "ecosystem:cordova",
     "cordova-android",
-    "cordova-ios",
+    "cordova-ios"
   ],
   "engines": [
     {
@@ -27,7 +27,7 @@
     {
       "name": "cordova-ios",
       "version": ">=4.0.0-dev"
-    },
+    }
   ],
   "author": "Apache Software Foundation",
   "license": "Apache 2.0"
