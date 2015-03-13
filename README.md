@@ -1,8 +1,8 @@
 # cordova-plugin-whitelist
 
 This plugin implements a whitelist policy for navigating the application webview on Cordova 4.0
-
-## Supported Cordova Platforms
+z
+## Supported Cordova Platformsasdf
 
 * Android 4.0.0 or above
 * iOS 4.0.0 or above
