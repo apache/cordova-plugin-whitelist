@@ -65,7 +65,8 @@ public class WhitelistPlugin extends CordovaPlugin {
         }
     }
 
-    private class CustomConfigXmlParser extends  ConfigXmlParser {
+    private class CustomConfigXmlParser extends ConfigXmlParser {
+        @Override
         public void handleStartTag(XmlPullParser xml) {
             String strNode = xml.getName();
             if (strNode.equals("content")) {
@@ -102,6 +103,7 @@ public class WhitelistPlugin extends CordovaPlugin {
                 }
             }
         }
+        @Override
         public void handleEndTag(XmlPullParser xml) {
         }
     }
