@@ -40,7 +40,8 @@ public class LegacyWhitelistPlugin extends CordovaPlugin {
         internalWhitelist.addWhiteListEntry("data:*", false);
 
         new ConfigXmlParser(){
-            public void handleStartTag(XmlResourceParser xml) {
+            @Override
+            public void handleStartTag(XmlPullParser xml) {
                 String strNode = xml.getName();
                 if (strNode.equals("access")) {
                     String origin = xml.getAttributeValue(null, "origin");
@@ -63,7 +64,8 @@ public class LegacyWhitelistPlugin extends CordovaPlugin {
                     }
                 }
             }
-            public void handleEndTag(XmlResourceParser xml) {
+            @Override
+            public void handleEndTag(XmlPullParser xml) {
             }
         }.parse(cordova.getActivity());
     }
