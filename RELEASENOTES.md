@@ -20,4 +20,9 @@
 -->
 # Release Notes
 
-### 1.0.0 (Sept 5, 2013)
+### 1.0.0 (Mar 25, 2015)
+* CB-8739 added missing license headers
+* Add @Override to CustomConfigXmlParser methods
+* Change ID to cordova-plugin-whitelist rather than reverse-DNS-style
+* Tweak CSP examples in README
+* CB-8660 remove extra commas from package.json
