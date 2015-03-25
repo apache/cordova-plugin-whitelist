@@ -20,4 +20,7 @@
 -->
 # Release Notes
 
-### 1.0.0 (Sept 5, 2013)
+### 1.0.0 (Mar 25, 2015)
+* CB-8739 added missing license headers
+* Fix XMl parsing broken by superclass refactor (XmlResourceParser->XmlPullParser)
+* CB-8660 remove extra commas from package.json
