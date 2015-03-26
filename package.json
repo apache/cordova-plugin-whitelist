@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-legacy-whitelist",
-  "version": "1.0.1-dev",
+  "version": "1.0.0",
   "description": "Cordova Legacy Whitelist Plugin",
   "cordova": {
     "platforms": [
