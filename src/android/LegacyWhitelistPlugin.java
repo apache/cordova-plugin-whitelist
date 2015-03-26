@@ -19,12 +19,10 @@
 
 package org.apache.cordova.whitelist;
 
-import org.apache.cordova.CordovaInterface;
 import org.apache.cordova.CordovaPlugin;
-import org.apache.cordova.CordovaWebView;
 import org.apache.cordova.ConfigXmlParser;
 import org.apache.cordova.Whitelist;
-import android.content.res.XmlResourceParser;
+import org.xmlpull.v1.XmlPullParser;
 
 public class LegacyWhitelistPlugin extends CordovaPlugin {
 
@@ -33,7 +31,8 @@ public class LegacyWhitelistPlugin extends CordovaPlugin {
 
     private static final String TAG = "Whitelist";
 
-    public void initialize(CordovaInterface cordova, CordovaWebView webView) {
+    @Override
+    public void pluginInitialize() {
         // Add implicitly allowed URLs
         internalWhitelist.addWhiteListEntry("file:///*", false);
         internalWhitelist.addWhiteListEntry("content:///*", false);
@@ -67,7 +66,7 @@ public class LegacyWhitelistPlugin extends CordovaPlugin {
             @Override
             public void handleEndTag(XmlPullParser xml) {
             }
-        }.parse(cordova.getActivity());
+        }.parse(webView.getContext());
     }
 
     public Boolean shouldAllowRequest(String url) {
