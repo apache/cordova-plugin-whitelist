@@ -40,7 +40,7 @@ other URLs, you must add `<allow-navigation>` tags to your `config.xml`:
 
     <!-- Wildcards are allowed for the protocol, as a prefix
          to the host, or as a suffix to the path -->
-    <allow-havigation href="*://*.example.com/*" />
+    <allow-navigation href="*://*.example.com/*" />
 
     <!-- A wildcard can be used to whitelist the entire network,
          over HTTP and HTTPS.
