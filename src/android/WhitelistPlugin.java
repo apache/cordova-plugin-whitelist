@@ -79,6 +79,8 @@ public class WhitelistPlugin extends CordovaPlugin {
                 if ("*".equals(origin)) {
                     allowedNavigations.addWhiteListEntry("http://*/*", false);
                     allowedNavigations.addWhiteListEntry("https://*/*", false);
+                    allowedRequests.addWhiteListEntry("content://*", false);
+                    allowedRequests.addWhiteListEntry("cdvfile://*", false);
                     allowedNavigations.addWhiteListEntry("data:*", false);
                 } else {
                     allowedNavigations.addWhiteListEntry(origin, false);
