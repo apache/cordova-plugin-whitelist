@@ -115,11 +115,10 @@ public class WhitelistPlugin extends CordovaPlugin {
 
     @Override
     public Boolean shouldAllowNavigation(String url) {
-        return true;
-        //if (allowedNavigations.isUrlWhiteListed(url)) {
-        //    return true;
-        //}
-        //return null; // Default policy
+        if (allowedNavigations.isUrlWhiteListed(url)) {
+            return true;
+        }
+        return null; // Default policy
     }
 
     @Override
