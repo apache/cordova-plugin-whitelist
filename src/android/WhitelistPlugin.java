@@ -48,8 +48,6 @@ public class WhitelistPlugin extends CordovaPlugin {
     public WhitelistPlugin(Whitelist allowedNavigations, Whitelist allowedIntents, Whitelist allowedRequests) {
         if (allowedRequests == null) {
             allowedRequests = new Whitelist();
-            allowedRequests.addWhiteListEntry("content://*", false);
-            allowedRequests.addWhiteListEntry("cdvfile://*", false);
             allowedRequests.addWhiteListEntry("file:///*", false);
             allowedRequests.addWhiteListEntry("data:*", false);
         }
@@ -79,9 +77,6 @@ public class WhitelistPlugin extends CordovaPlugin {
                 if ("*".equals(origin)) {
                     allowedNavigations.addWhiteListEntry("http://*/*", false);
                     allowedNavigations.addWhiteListEntry("https://*/*", false);
-                    allowedNavigations.addWhiteListEntry("content://*", false);
-                    allowedNavigations.addWhiteListEntry("cdvfile://*", false);
-                    allowedNavigations.addWhiteListEntry("file:///*", false);
                     allowedNavigations.addWhiteListEntry("data:*", false);
                 } else {
                     allowedNavigations.addWhiteListEntry(origin, false);
