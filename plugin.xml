@@ -49,12 +49,12 @@
     <platform name="ios">
         <config-file target="config.xml" parent="/*">
             <feature name="Whitelist">
-                <param name="ios-package" value="CDVNavigationWhitelistPlugin" /> 
+                <param name="ios-package" value="CDVWhitelistPlugin" /> 
                 <param name="onload" value="true" />
             </feature>
         </config-file>
-        <header-file src="src/ios/CDVNavigationWhitelistPlugin.h"  />
-        <source-file src="src/ios/CDVNavigationWhitelistPlugin.m" />
+        <header-file src="src/ios/CDVWhitelistPlugin.h"  />
+        <source-file src="src/ios/CDVWhitelistPlugin.m" />
 
         <js-module src="whitelist.js" name="whitelist">
             <runs />

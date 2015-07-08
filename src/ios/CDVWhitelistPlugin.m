@@ -17,29 +17,34 @@
  under the License.
  */
 
-#import "CDVNavigationWhitelistPlugin.h"
+#import "CDVWhitelistPlugin.h"
 #import <Cordova/CDVViewController.h>
 
-#pragma mark CDVNavigationWhitelistConfigParser
+#pragma mark CDVWhitelistConfigParser
 
-@interface CDVNavigationWhitelistConfigParser : NSObject <NSXMLParserDelegate> {}
+@interface CDVWhitelistConfigParser : NSObject <NSXMLParserDelegate> {}
 
-@property (nonatomic, strong) NSMutableArray* whitelistHosts;
+@property (nonatomic, strong) NSMutableArray* navigationWhitelistHosts;
+@property (nonatomic, strong) NSMutableArray* accessWhitelistHosts;
 
 @end
 
-@implementation CDVNavigationWhitelistConfigParser
+@implementation CDVWhitelistConfigParser
 
-@synthesize whitelistHosts;
+@synthesize navigationWhitelistHosts, accessWhitelistHosts;
 
 - (id)init
 {
     self = [super init];
     if (self != nil) {
-        self.whitelistHosts = [[NSMutableArray alloc] initWithCapacity:30];
-        [self.whitelistHosts addObject:@"file:///*"];
-        [self.whitelistHosts addObject:@"content:///*"];
-        [self.whitelistHosts addObject:@"data:///*"];
+        NSArray* defaultHosts = @[
+                                  @"file:///*",
+                                  @"content:///*",
+                                  @"data:///*"
+                                  ];
+
+        self.navigationWhitelistHosts = [[NSMutableArray alloc] initWithArray:defaultHosts];
+        self.accessWhitelistHosts = [[NSMutableArray alloc] initWithArray:defaultHosts];
     }
     return self;
 }
@@ -47,7 +52,10 @@
 - (void)parser:(NSXMLParser*)parser didStartElement:(NSString*)elementName namespaceURI:(NSString*)namespaceURI qualifiedName:(NSString*)qualifiedName attributes:(NSDictionary*)attributeDict
 {
     if ([elementName isEqualToString:@"allow-navigation"]) {
-        [whitelistHosts addObject:attributeDict[@"href"]];
+        [navigationWhitelistHosts addObject:attributeDict[@"href"]];
+    }
+    else if ([elementName isEqualToString:@"access"]) {
+        [accessWhitelistHosts addObject:attributeDict[@"origin"]];
     }
 }
 
@@ -63,27 +71,35 @@
 
 @end
 
-#pragma mark CDVNavigationWhitelistPlugin
+#pragma mark CDVWhitelistPlugin
 
-@interface CDVNavigationWhitelistPlugin () {}
-@property (nonatomic, strong) CDVWhitelist* whitelist;
+@interface CDVWhitelistPlugin () {}
+@property (nonatomic, strong) CDVWhitelist* navigationWhitelist;
+@property (nonatomic, strong) CDVWhitelist* accessWhitelist;
 @end
 
-@implementation CDVNavigationWhitelistPlugin
+@implementation CDVWhitelistPlugin
 
-@synthesize whitelist;
+@synthesize navigationWhitelist, accessWhitelist;
 
 - (void)setViewController:(UIViewController *)viewController
 {
     if ([viewController isKindOfClass:[CDVViewController class]]) {
-        CDVNavigationWhitelistConfigParser *whitelistConfigParser = [[CDVNavigationWhitelistConfigParser alloc] init];
+        CDVWhitelistConfigParser *whitelistConfigParser = [[CDVWhitelistConfigParser alloc] init];
         [(CDVViewController *)viewController parseSettingsWithParser:whitelistConfigParser];
-        self.whitelist = [[CDVWhitelist alloc] initWithArray:whitelistConfigParser.whitelistHosts];
+        self.navigationWhitelist = [[CDVWhitelist alloc] initWithArray:whitelistConfigParser.navigationWhitelistHosts];
+        self.accessWhitelist = [[CDVWhitelist alloc] initWithArray:whitelistConfigParser.accessWhitelistHosts];
     }
 }
 
 - (BOOL)shouldAllowNavigationToURL:(NSURL *)url
 {
-    return [self.whitelist URLIsAllowed:url];
+    return [self.navigationWhitelist URLIsAllowed:url];
 }
+
+- (BOOL)shouldAllowRequestForURL:(NSURL *)url
+{
+    return [self.accessWhitelist URLIsAllowed:url];
+}
+
 @end

@@ -22,8 +22,9 @@
 #import <Cordova/CDVWhitelist.h>
 #import <Cordova/CDVURLRequestFilter.h>
 
-@interface CDVNavigationWhitelistPlugin : CDVPlugin <CDVURLRequestFilter>{}
+@interface CDVWhitelistPlugin : CDVPlugin <CDVURLRequestFilter>{}
 
-@property (nonatomic, readonly, strong) CDVWhitelist* whitelist; // readonly for public
+@property (nonatomic, readonly, strong) CDVWhitelist* navigationWhitelist; // readonly for public
+@property (nonatomic, readonly, strong) CDVWhitelist* accessWhitelist; // readonly for public
 
 @end
