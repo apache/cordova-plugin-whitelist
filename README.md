@@ -32,8 +32,7 @@ top-level navigations only.
 
 Quirks: on Android it also applies to iframes for non-http(s) schemes.
 
-By default, navigations only to `file://` URLs, are allowed. To allow other
-other URLs, you must add `<allow-navigation>` tags to your `config.xml`:
+By default, navigations only to `file://` URLs, are allowed. To allow others URLs, you must add `<allow-navigation>` tags to your `config.xml`:
 
     <!-- Allow links to example.com -->
     <allow-navigation href="http://example.com/*" />
