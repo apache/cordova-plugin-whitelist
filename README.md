@@ -130,13 +130,16 @@ Here are some example CSP declarations for your `.html` pages:
     -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *">
 
-    <!-- Allow requests to foo.com -->
+    <!-- Allow everything but only from the same origin and foo.com -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self' foo.com">
 
-    <!-- Enable all requests, inline styles, and eval() -->
+    <!-- This policy allows everything (eg CSS, AJAX, object, frame, media, etc) except that 
+        * CSS only from the same origin and inline styles,
+        * scripts only from the same origin and inline styles, and eval()
+    -->
     <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
 
-    <!-- Allow XHRs via https only -->
+    <!-- Allows XHRs only over HTTPS on the same domain. -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:">
 
     <!-- Allow iframe to https://cordova.apache.org/ -->
