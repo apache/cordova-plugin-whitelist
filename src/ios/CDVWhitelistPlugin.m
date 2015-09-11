@@ -26,6 +26,7 @@
 
 @property (nonatomic, strong) NSMutableArray* navigationWhitelistHosts;
 @property (nonatomic, strong) NSMutableArray* accessWhitelistHosts;
+@property (nonatomic, strong) NSArray* defaultHosts;
 
 @end
 
@@ -37,14 +38,14 @@
 {
     self = [super init];
     if (self != nil) {
-        NSArray* defaultHosts = @[
-                                  @"file:///*",
-                                  @"content:///*",
-                                  @"data:///*"
-                                  ];
+        self.defaultHosts = @[
+                              @"file:///*",
+                              @"content:///*",
+                              @"data:///*"
+                             ];
 
-        self.navigationWhitelistHosts = [[NSMutableArray alloc] initWithArray:defaultHosts];
-        self.accessWhitelistHosts = [[NSMutableArray alloc] initWithArray:defaultHosts];
+        self.navigationWhitelistHosts = [[NSMutableArray alloc] initWithArray:self.defaultHosts];
+        self.accessWhitelistHosts = [[NSMutableArray alloc] initWithArray:self.defaultHosts];
     }
     return self;
 }
@@ -88,6 +89,10 @@
         CDVWhitelistConfigParser *whitelistConfigParser = [[CDVWhitelistConfigParser alloc] init];
         [(CDVViewController *)viewController parseSettingsWithParser:whitelistConfigParser];
         self.navigationWhitelist = [[CDVWhitelist alloc] initWithArray:whitelistConfigParser.navigationWhitelistHosts];
+        // if no access tags set, default to * (https://issues.apache.org/jira/browse/CB-9568)
+        if ([whitelistConfigParser.accessWhitelistHosts isEqualToArray:whitelistConfigParser.defaultHosts]) {
+            [whitelistConfigParser.accessWhitelistHosts addObject:@"*"];
+        }
         self.accessWhitelist = [[CDVWhitelist alloc] initWithArray:whitelistConfigParser.accessWhitelistHosts];
     }
 }
