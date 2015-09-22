@@ -18,10 +18,23 @@
  *
 */
 
-if (!document.querySelector('meta[http-equiv=Content-Security-Policy]')) {
-    var msg = 'No Content-Security-Policy meta tag found. Please add one when using the cordova-plugin-whitelist plugin.';
-    console.error(msg);
-    setInterval(function() {
-        console.warn(msg);
-    }, 10000);
+var hasCSP = function() {
+    return document.querySelector('meta[http-equiv=Content-Security-Policy]');
+}
+
+var spewDistance = 10000; // 10 seconds
+
+if (!hasCSP) {
+    // Wait for the page to load then check again
+    setTimeout(function() {
+        if (hasCSP) {
+            return;
+        }
+        
+        var msg = 'No Content-Security-Policy meta tag found. Please add one when using the cordova-plugin-whitelist plugin.';
+        console.error(msg);
+        setInterval(function() {
+            console.warn(msg);
+        }, spewDistance);        
+    }, spewDistance);
 }
