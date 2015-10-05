@@ -99,12 +99,12 @@
 
 - (BOOL)shouldAllowNavigationToURL:(NSURL *)url
 {
-    return [self.navigationWhitelist URLIsAllowed:url];
+    return IsAtLeastiOSVersion(@"9.0") || [self.navigationWhitelist URLIsAllowed:url];
 }
 
 - (BOOL)shouldAllowRequestForURL:(NSURL *)url
 {
-    return [self.accessWhitelist URLIsAllowed:url];
+    return IsAtLeastiOSVersion(@"9.0") || [self.accessWhitelist URLIsAllowed:url];
 }
 
 @end
