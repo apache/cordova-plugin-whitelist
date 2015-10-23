@@ -62,7 +62,7 @@
     </platform>
 	
 	<info>
-This plugin is only applicable for the cordova-ios 4.x and cordova-android 4.x platforms. If you have a previous platform version, you do *not* need this plugin since the whitelist will be built in. Consequently, if you are building using the iOS 9 SDK (Xcode 7), you do *not* need this plugin as well since the whitelist used will be built-in to iOS 9 (Application Transport Security, or ATS).
+This plugin is only applicable for the cordova-ios 4.x and cordova-android 4.x platforms. If you have a previous platform version, you do *not* need this plugin since the whitelist will be built in.
 	</info>
 
 </plugin>
