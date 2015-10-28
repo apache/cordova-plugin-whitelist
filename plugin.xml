@@ -62,7 +62,7 @@
     </platform>
 	
 	<info>
-This plugin is only applicable for the cordova-ios 4.x and cordova-android 4.x platforms. If you have a previous platform version, you do *not* need this plugin since the whitelist will be built in.
+This plugin is only applicable for versions of cordova-ios and cordova-android greater than 4.0. If you have a previous platform version, you do *not* need this plugin since the whitelist will be built in.
 	</info>
 
 </plugin>
