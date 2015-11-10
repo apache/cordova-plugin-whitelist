@@ -27,8 +27,8 @@
     <keywords>cordova,whitelist,policy</keywords>
 
     <engines>
-      <engine name="cordova-android" version=">=4.0.0-dev" />
-      <engine name="cordova-ios" version=">=4.0.0-dev" />
+      <engine name="cordova-android" version=">=4" />
+      <engine name="cordova-ios" version=">=4" />
     </engines>
 
     <platform name="android">
