@@ -4,8 +4,7 @@
   "description": "Cordova Whitelist Plugin",
   "cordova": {
     "platforms": [
-      "android",
-      "ios"
+      "android"
     ]
   },
   "repository": {
@@ -16,16 +15,11 @@
     "cordova",
     "whitelist",
     "ecosystem:cordova",
-    "cordova-android",
-    "cordova-ios"
+    "cordova-android"
   ],
   "engines": [
     {
       "name": "cordova-android",
-      "version": ">=4.0.0-dev"
-    },
-    {
-      "name": "cordova-ios",
       "version": ">=4.0.0-dev"
     }
   ],

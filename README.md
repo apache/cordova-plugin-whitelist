@@ -27,7 +27,6 @@ This plugin implements a whitelist policy for navigating the application webview
 ## Supported Cordova Platforms
 
 * Android 4.0.0 or above
-* iOS 4.0.0 or above
 
 ## Navigation Whitelist
 Controls which URLs the WebView itself can be navigated to. Applies to
