@@ -20,13 +20,6 @@
 -->
 # Release Notes
 
-### 1.0.0 (Mar 25, 2015)
-* CB-8739 added missing license headers
-* Add @Override to CustomConfigXmlParser methods
-* Change ID to cordova-plugin-whitelist rather than reverse-DNS-style
-* Tweak CSP examples in README
-* CB-8660 remove extra commas from package.json
-
 ### 1.1.0 (Jun 17, 2015)
 * CB-9128 cordova-plugin-whitelist documentation translation: cordova-plugin-whitelist
 * fix npm md issue
@@ -34,3 +27,10 @@
 * CB-9089 - iOS whitelist plugin does not compile
 * CB-9090 - Enable whitelist plugin for cordova-ios 4.0.0
 * Fixed error in Content-Security-Policy example
+
+### 1.0.0 (Mar 25, 2015)
+* CB-8739 added missing license headers
+* Add @Override to CustomConfigXmlParser methods
+* Change ID to cordova-plugin-whitelist rather than reverse-DNS-style
+* Tweak CSP examples in README
+* CB-8660 remove extra commas from package.json
