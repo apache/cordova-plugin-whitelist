@@ -20,16 +20,16 @@
 -->
 # Release Notes
 
-### 1.0.0 (Mar 25, 2015)
-* CB-8739 added missing license headers
-* Fix XMl parsing broken by superclass refactor (XmlResourceParser->XmlPullParser)
-* CB-8660 remove extra commas from package.json
-
 ### 1.1.0 (Jun 17, 2015)
 * CB-9128 cordova-plugin-legacy-whitelist documentation translation: cordova-plugin-legacy-whitelist
 * fix npm md issue
 * Fix compile error introduces by 6a3d2cb3567
 * CB-8739 Updated version and RELEASENOTES.md for release 1.0.0
+* CB-8739 added missing license headers
+* Fix XMl parsing broken by superclass refactor (XmlResourceParser->XmlPullParser)
+* CB-8660 remove extra commas from package.json
+
+### 1.0.0 (Mar 25, 2015)
 * CB-8739 added missing license headers
 * Fix XMl parsing broken by superclass refactor (XmlResourceParser->XmlPullParser)
 * CB-8660 remove extra commas from package.json
