@@ -21,19 +21,19 @@
 # Release Notes
 
 ### 1.1.1 (Nov 18, 2015)
-* CB-10035 Updated `RELEASENOTES` to be newest to oldest
+* [CB-10035](https://issues.apache.org/jira/browse/CB-10035) Updated `RELEASENOTES` to be newest to oldest
 * Fixing contribute link.
 
 ### 1.1.0 (Jun 17, 2015)
-* CB-9128 cordova-plugin-legacy-whitelist documentation translation: cordova-plugin-legacy-whitelist
+* [CB-9128](https://issues.apache.org/jira/browse/CB-9128) cordova-plugin-legacy-whitelist documentation translation: cordova-plugin-legacy-whitelist
 * fix npm md issue
 * Fix compile error introduces by 6a3d2cb3567
-* CB-8739 Updated version and RELEASENOTES.md for release 1.0.0
-* CB-8739 added missing license headers
+* [CB-8739](https://issues.apache.org/jira/browse/CB-8739) Updated version and RELEASENOTES.md for release 1.0.0
+* [CB-8739](https://issues.apache.org/jira/browse/CB-8739) added missing license headers
 * Fix XMl parsing broken by superclass refactor (XmlResourceParser->XmlPullParser)
-* CB-8660 remove extra commas from package.json
+* [CB-8660](https://issues.apache.org/jira/browse/CB-8660) remove extra commas from package.json
 
 ### 1.0.0 (Mar 25, 2015)
-* CB-8739 added missing license headers
+* [CB-8739](https://issues.apache.org/jira/browse/CB-8739) added missing license headers
 * Fix XMl parsing broken by superclass refactor (XmlResourceParser->XmlPullParser)
-* CB-8660 remove extra commas from package.json
+* [CB-8660](https://issues.apache.org/jira/browse/CB-8660) remove extra commas from package.json
