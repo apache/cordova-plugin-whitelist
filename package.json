@@ -20,7 +20,7 @@
   "engines": [
     {
       "name": "cordova-android",
-      "version": ">=4.0.0-dev"
+      "version": ">=4.0.0"
     }
   ],
   "author": "Apache Software Foundation",
