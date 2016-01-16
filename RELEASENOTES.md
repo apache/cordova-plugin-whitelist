@@ -20,6 +20,9 @@
 -->
 # Release Notes
 
+### 1.2.1 (Jan 15, 2016)
+* CB-10194 info tag prints for ios when not applicable
+
 ### 1.2.0 (Nov 18, 2015)
 * removed **iOS** engine check from `plugin.xml`
 * [CB-10035](https://issues.apache.org/jira/browse/CB-10035) Updated `RELEASENOTES` to be newest to oldest
