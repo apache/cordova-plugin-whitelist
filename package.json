@@ -17,12 +17,13 @@
     "ecosystem:cordova",
     "cordova-android"
   ],
-  "engines": [
-    {
-      "name": "cordova-android",
-      "version": ">=4.0.0"
+  "engines": {
+    "cordovaDependencies": {
+      "0.0.0": {
+        "cordova-android": ">=4.0.0"
+      }
     }
-  ],
+  },
   "author": "Apache Software Foundation",
   "license": "Apache 2.0"
 }
