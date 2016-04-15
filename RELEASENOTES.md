@@ -20,6 +20,10 @@
 -->
 # Release Notes
 
+### 1.2.2 (Apr 15, 2016)
+* add note about redirects
+* CB-10624 remove error message from `whitelist.js`, which leaves it empty
+
 ### 1.2.1 (Jan 15, 2016)
 * CB-10194 info tag prints for ios when not applicable
 
