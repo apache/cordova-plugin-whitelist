@@ -1,3 +1,7 @@
+---
+title: Legacy Whitelist
+description: Legacy implementation of the whitelist plugin.
+---
 <!--
 # license: Licensed to the Apache Software Foundation (ASF) under one
 #         or more contributor license agreements.  See the NOTICE file
