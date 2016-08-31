@@ -21,6 +21,9 @@
     "cordovaDependencies": {
       "0.0.0": {
         "cordova-android": ">=4.0.0"
+      },
+      "2.0.0": {
+        "cordova": ">100"
       }
     }
   },
