@@ -20,6 +20,12 @@
 -->
 # Release Notes
 
+### 1.1.2 (Dec 07, 2016)
+* [CB-11917](https://issues.apache.org/jira/browse/CB-11917) - Remove pull request template checklist item: "iCLA has been submitted…"
+* Add pull request template.
+* [CB-10996](https://issues.apache.org/jira/browse/CB-10996) Adding front matter to README.md
+* [CB-10035](https://issues.apache.org/jira/browse/CB-10035) Incremented plugin version.
+
 ### 1.1.1 (Nov 18, 2015)
 * [CB-10035](https://issues.apache.org/jira/browse/CB-10035) Updated `RELEASENOTES` to be newest to oldest
 * Fixing contribute link.
