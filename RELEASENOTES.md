@@ -20,6 +20,9 @@
 -->
 # Release Notes
 
+### 1.3.3 (Nov 06, 2017)
+* [CB-12847](https://issues.apache.org/jira/browse/CB-12847) added `bugs` entry to `package.json`.
+
 ### 1.3.2 (Feb 28, 2017)
 * [CB-12236](https://issues.apache.org/jira/browse/CB-12236) Fixed `RELEASENOTES` for `cordova-plugin-whitelist`
 
