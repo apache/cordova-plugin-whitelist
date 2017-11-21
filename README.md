@@ -23,8 +23,12 @@ description: Legacy implementation of the whitelist plugin.
 
 # cordova-plugin-legacy-whitelist
 
+## Description
+
+### Deprecation Notice
+
 This plugin implements the Cordova 3.6 Whitelist policy for Cordova 4.0.
-Please use cordova-plugin-whitelist instead, as it's more secure.
+Please use [cordova-plugin-whitelist](https://github.com/apache/cordova-plugin-whitelist) instead, as it's more secure.
 
 Supported on:
 - cordova-android@4.0.0
