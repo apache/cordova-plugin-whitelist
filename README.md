@@ -67,7 +67,7 @@ By default, navigations only to `file://` URLs, are allowed. To allow others URL
 
 ## Intent Whitelist
 Controls which URLs the app is allowed to ask the system to open.
-By default, all external URLs and intent types are allowed, it is advised to narrow this down based on each app's needs.
+With an empty config.xml without any allow-intent entries, this would mean no external URLs are allowed, it is advised to narrow this down based on each app's needs.
 
 On Android, this equates to sending an intent of type BROWSEABLE.
 
