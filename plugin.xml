@@ -39,10 +39,6 @@
         </config-file>
 
         <source-file src="src/android/WhitelistPlugin.java" target-dir="src/org/apache/cordova/whitelist" />
-
-        	<info>
-               This plugin is only applicable for versions of cordova-android greater than 4.0. If you have a previous platform version, you do *not* need this plugin since the whitelist will be built in.
-          </info>
     </platform>
 
 </plugin>
