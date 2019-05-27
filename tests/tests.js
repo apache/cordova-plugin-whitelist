@@ -28,7 +28,7 @@ exports.defineAutoTests = function () {
             expect(cordova.whitelist).toBeDefined();
         });
 
-        describe("Match function", function () {
+        describe("Match function (cordova.whitelist.match)", function () {
             function expectMatchWithResult(result) {
                 return (function (url, patterns, description) {
                     description = description || ((result ? "should accept " : "should reject ") + url + " for " + JSON.stringify(patterns));
@@ -67,6 +67,11 @@ exports.defineAutoTests = function () {
 
             var itShouldMatch = expectMatchWithResult(true);
             var itShouldNotMatch = expectMatchWithResult(false);
+
+            it("should exist", function () {
+                expect(cordova.whitelist.match).toBeDefined();
+                expect(typeof cordova.whitelist.match).toBe("function");
+            });
 
             itShouldMatch('http://www.apache.org/', ['*'], "should accept any domain for *");
             itShouldNotMatch('http://www.apache.org/', [], "should not accept any domain for []");
@@ -145,7 +150,7 @@ exports.defineAutoTests = function () {
             itShouldNotMatch('http://www.apache.org/Foo/bar', ['*://*.apache.org/foo/*']);
         });
 
-        describe("Test function", function () {
+        describe("Test function (cordova.whitelist.test)", function () {
             function expectTestWithResult(result) {
                 return (function (url, description) {
                     description = description || ((result ? "should accept " : "should reject ") + url);
