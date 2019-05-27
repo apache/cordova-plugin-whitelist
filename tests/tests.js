@@ -20,9 +20,7 @@
 
 exports.defineAutoTests = function () {
 
-    var isWindowsPhone = cordova.platformId == 'windowsphone';
-    var isWindows = (cordova.platformId === "windows") || (cordova.platformId === "windows8")
-    var isIOS = (cordova.platformId === "ios");
+    var isAndroid = (cordova.platformId === "android");
 
     describe('Whitelist API (cordova.whitelist)', function () {
 
@@ -43,8 +41,8 @@ exports.defineAutoTests = function () {
                         var originalTimeout,
                             cb;
 
-                        if (isWindows || isWindowsPhone || isIOS) {
-                            pending();
+                        if (!isAndroid) {
+                            pending("Whitelist Plugin only exists for Android");
                         }
 
                         beforeEach(function (done) {
@@ -153,8 +151,8 @@ exports.defineAutoTests = function () {
                     description = description || ((result ? "should accept " : "should reject ") + url);
 
                     describe("Test function", function () {
-                        if (isWindows || isWindowsPhone || isIOS) {
-                            pending();
+                        if (!isAndroid) {
+                            pending("Whitelist Plugin only exists for Android");
                         }
 
                         var cb,
