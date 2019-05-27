@@ -12,7 +12,7 @@
     "url": "https://github.com/apache/cordova-plugin-whitelist"
   },
   "bugs": {
-    "url": "https://issues.apache.org/jira/browse/CB"
+    "url": "https://github.com/apache/cordova-plugin-whitelist/issues"
   },
   "keywords": [
     "cordova",
@@ -20,6 +20,11 @@
     "ecosystem:cordova",
     "cordova-android"
   ],
+  "scripts": {
+    "test": "echo \"no npm tests implemented for this plugin\""
+  },
+  "author": "Apache Software Foundation",
+  "license": "Apache-2.0",
   "engines": {
     "cordovaDependencies": {
       "0.0.0": {
@@ -29,7 +34,5 @@
         "cordova": ">100"
       }
     }
-  },
-  "author": "Apache Software Foundation",
-  "license": "Apache-2.0"
+  }
 }
