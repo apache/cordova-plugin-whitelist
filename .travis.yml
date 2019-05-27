@@ -2,8 +2,8 @@ sudo: false
 
 addons:
   jwt:
-    # sauce labs key
-    secure: "ph58/sMEPkxz4pD8GNqaEPpc4SwSEc3yV9cWQec7zHADVYUAwQcfXY0VSbJCsq7SKCsS6lV4rbNhl5I8s7q7UJoUndwZx9MeIiTBzA7G+l3d52xtgCSaVKXub2wfOfM8iA9ufv3BWHVSK3lIgeR36M5gqTEaVBXvyG9bFdTT+K8="
+    # SAUCE_ACCESS_KEY
+    secure: "lXoPl/RjXnA5FocMLhpA4nFtzH/VaX6oMDG4H/uNAKBusTpQiVmmnXkZhv6ERsuuHHMUfZn/29m2On1J4hv8x+u5XpBjkTe0/5umYARTuyWXfnMmILNVNKZr7qmaiFBXI1LrnEoNqgbKR1ZqoN6bMrPZEWRr7AFVgwkRsWRoeTc="
 
 env:
   global:
