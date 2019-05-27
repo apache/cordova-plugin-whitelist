@@ -42,7 +42,11 @@
 
         <source-file src="src/android/WhitelistAPI.java" target-dir="src/org/apache/cordova/test" />
 
-        <config-file target="res/xml/config.xml" parent="/*">
+        <!-- remove <access origin="*" /> -->
+        <hook type="after_prepare" src="scripts/remove-access.js"/>
+
+        <config-file target="config.xml" parent="/*">
+
             <access origin="http://audio.ibeat.org" />
             <access origin="http://whatheaders.com" />
             <access origin="http://*.apache.org" />
