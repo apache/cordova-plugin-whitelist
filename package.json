@@ -21,7 +21,7 @@
     "cordova-android"
   ],
   "scripts": {
-    "test": "echo \"no npm tests implemented for this plugin\""
+    "test": "echo \"no tests implemented for this plugin\""
   },
   "author": "Apache Software Foundation",
   "license": "Apache-2.0",

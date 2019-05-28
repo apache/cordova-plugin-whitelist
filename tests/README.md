@@ -17,20 +17,22 @@
          under the License.
 ---
 
-Whitelist
-=========
+# cordova-plugin-whitelist-tests
+
+This are an [optional JavaScript interface](#whitelist) to the core Cordova Whitelist functionality and the test plugin that uses it to test cordova-plugin-whitelist.
+
+## Whitelist
 
 > The `whitelist` object provides an interface for testing whether arbitrary
 > URLs are allowed by the currently active configuration, or would be allowed
 > by a given set of whitelist patterns.
 
-Methods
--------
+### Methods
 
 - cordova.whitelist.match
 - cordova.whitelist.test
 
-### cordova.whitelist.match
+#### cordova.whitelist.match
 
 Indicates whether a given URL would be allowed by a set of Whitelist URL
 patterns.
@@ -40,7 +42,7 @@ patterns.
 `callback` will be invoked with a boolean argument indicating whether the
 url matches the set of patterns.
 
-### cordova.whitelist.test
+#### cordova.whitelist.test
 
 Indicates whether a given URL would be allowed by the current application
 configuration.
