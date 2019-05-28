@@ -48,6 +48,7 @@ exports.defineAutoTests = function () {
                         beforeEach(function (done) {
                             originalTimeout = jasmine.DEFAULT_TIMEOUT_INTERVAL;
                             jasmine.DEFAULT_TIMEOUT_INTERVAL = 7500;
+                            
                             cb = jasmine.createSpy('spy').and.callFake(function () {
                                 done();
                             });
@@ -73,68 +74,68 @@ exports.defineAutoTests = function () {
                 expect(typeof cordova.whitelist.match).toBe("function");
             });
 
-            itShouldMatch('http://www.apache.org/', ['*'], "should accept any domain for *");
-            itShouldNotMatch('http://www.apache.org/', [], "should not accept any domain for []");
+            itShouldMatch('http://www.apache.org/',     ['*'],  "should accept any domain for *");
+            itShouldNotMatch('http://www.apache.org/',  [],     "should not accept any domain for []");
 
-            itShouldMatch('http://apache.org/', ['http://*.apache.org']);
-            itShouldMatch('http://www.apache.org/', ['http://*.apache.org']);
-            itShouldMatch('http://www.apache.org/some/path', ['http://*.apache.org']);
-            itShouldMatch('http://some.domain.under.apache.org/', ['http://*.apache.org']);
-            itShouldMatch('http://user:pass@apache.org/', ['http://*.apache.org']);
-            itShouldMatch('http://user:pass@www.apache.org/', ['http://*.apache.org']);
-            itShouldMatch('http://www.apache.org/?some=params', ['http://*.apache.org']);
-            itShouldNotMatch('http://apache.com/', ['http://*.apache.org']);
-            itShouldNotMatch('http://www.evil.com/?url=www.apache.org', ['http://*.apache.org']);
-            itShouldNotMatch('http://www.evil.com/?url=http://www.apache.org', ['http://*.apache.org']);
-            itShouldNotMatch('http://www.evil.com/?url=http%3A%2F%2Fwww%2Eapache%2Eorg', ['http://*.apache.org']);
-            itShouldNotMatch('https://apache.org/', ['http://*.apache.org']);
-            itShouldNotMatch('http://www.apache.org:pass@evil.com/', ['http://*.apache.org']);
-            itShouldNotMatch('http://www.apache.org.evil.com/', ['http://*.apache.org']);
+            itShouldMatch('http://apache.org/',                                             ['http://*.apache.org']);
+            itShouldMatch('http://www.apache.org/',                                         ['http://*.apache.org']);
+            itShouldMatch('http://www.apache.org/some/path',                                ['http://*.apache.org']);
+            itShouldMatch('http://some.domain.under.apache.org/',                           ['http://*.apache.org']);
+            itShouldMatch('http://user:pass@apache.org/',                                   ['http://*.apache.org']);
+            itShouldMatch('http://user:pass@www.apache.org/',                               ['http://*.apache.org']);
+            itShouldMatch('http://www.apache.org/?some=params',                             ['http://*.apache.org']);
+            itShouldNotMatch('http://apache.com/',                                          ['http://*.apache.org']);
+            itShouldNotMatch('http://www.evil.com/?url=www.apache.org',                     ['http://*.apache.org']);
+            itShouldNotMatch('http://www.evil.com/?url=http://www.apache.org',              ['http://*.apache.org']);
+            itShouldNotMatch('http://www.evil.com/?url=http%3A%2F%2Fwww%2Eapache%2Eorg',    ['http://*.apache.org']);
+            itShouldNotMatch('https://apache.org/',                                         ['http://*.apache.org']);
+            itShouldNotMatch('http://www.apache.org:pass@evil.com/',                        ['http://*.apache.org']);
+            itShouldNotMatch('http://www.apache.org.evil.com/',                             ['http://*.apache.org']);
 
-            itShouldMatch('http://www.apache.org/', ['http://*.apache.org', 'https://*.apache.org']);
-            itShouldMatch('https://www.apache.org/', ['http://*.apache.org', 'https://*.apache.org']);
-            itShouldNotMatch('ftp://www.apache.org/', ['http://*.apache.org', 'https://*.apache.org']);
-            itShouldNotMatch('http://www.apache.com/', ['http://*.apache.org', 'https://*.apache.org']);
+            itShouldMatch('http://www.apache.org/',     ['http://*.apache.org', 'https://*.apache.org']);
+            itShouldMatch('https://www.apache.org/',    ['http://*.apache.org', 'https://*.apache.org']);
+            itShouldNotMatch('ftp://www.apache.org/',   ['http://*.apache.org', 'https://*.apache.org']);
+            itShouldNotMatch('http://www.apache.com/',  ['http://*.apache.org', 'https://*.apache.org']);
 
-            itShouldMatch('http://www.apache.org/', ['http://www.apache.org']);
-            itShouldNotMatch('http://build.apache.org/', ['http://www.apache.org']);
-            itShouldNotMatch('http://apache.org/', ['http://www.apache.org']);
+            itShouldMatch('http://www.apache.org/',         ['http://www.apache.org']);
+            itShouldNotMatch('http://build.apache.org/',    ['http://www.apache.org']);
+            itShouldNotMatch('http://apache.org/',          ['http://www.apache.org']);
 
-            itShouldMatch('http://www.apache.org/', ['http://*/*']);
+            itShouldMatch('http://www.apache.org/',             ['http://*/*']);
             itShouldMatch('http://www.apache.org/foo/bar.html', ['http://*/*']);
 
-            itShouldMatch('http://www.apache.org/foo', ['http://*/foo*']);
+            itShouldMatch('http://www.apache.org/foo',          ['http://*/foo*']);
             itShouldMatch('http://www.apache.org/foo/bar.html', ['http://*/foo*']);
-            itShouldNotMatch('http://www.apache.org/', ['http://*/foo*']);
+            itShouldNotMatch('http://www.apache.org/',          ['http://*/foo*']);
 
             itShouldMatch('file:///foo', ['file:///*']);
 
-            itShouldMatch('file:///foo', ['file:///foo*']);
-            itShouldMatch('file:///foo/bar.html', ['file:///foo*']);
-            itShouldNotMatch('file:///foo.html', []);
-            itShouldNotMatch('http://www.apache.org/etc/foo', ['http://www.apache.org/foo*']);
-            itShouldNotMatch('http://www.apache.org/foo', ['file:///foo*']);
+            itShouldMatch('file:///foo',                ['file:///foo*']);
+            itShouldMatch('file:///foo/bar.html',       ['file:///foo*']);
+            itShouldNotMatch('file:///foo.html',        []);
+            itShouldNotMatch('http://www.apache.org/etc/foo',   ['http://www.apache.org/foo*']);
+            itShouldNotMatch('http://www.apache.org/foo',       ['file:///foo*']);
 
-            itShouldMatch('http://www.apache.org/', ['*://www.apache.org/*']);
-            itShouldMatch('https://www.apache.org/', ['*://www.apache.org/*']);
-            itShouldMatch('ftp://www.apache.org/', ['*://www.apache.org/*']);
-            itShouldMatch('file://www.apache.org/', ['*://www.apache.org/*']);
+            itShouldMatch('http://www.apache.org/',     ['*://www.apache.org/*']);
+            itShouldMatch('https://www.apache.org/',    ['*://www.apache.org/*']);
+            itShouldMatch('ftp://www.apache.org/',      ['*://www.apache.org/*']);
+            itShouldMatch('file://www.apache.org/',     ['*://www.apache.org/*']);
             if (cordova.platformId == 'android')
                 itShouldMatch('content://www.apache.org/', ['*://www.apache.org/*']);
-            itShouldMatch('foo://www.apache.org/', ['*://www.apache.org/*']);
-            itShouldNotMatch('http://www.apache.com/', ['*://www.apache.org/*']);
+            itShouldMatch('foo://www.apache.org/',      ['*://www.apache.org/*']);
+            itShouldNotMatch('http://www.apache.com/',  ['*://www.apache.org/*']);
 
-            itShouldMatch('http://www.apache.org/', ['*.apache.org']);
-            itShouldMatch('https://www.apache.org/', ['*.apache.org']);
-            itShouldNotMatch('ftp://www.apache.org/', ['*.apache.org']);
+            itShouldMatch('http://www.apache.org/',     ['*.apache.org']);
+            itShouldMatch('https://www.apache.org/',    ['*.apache.org']);
+            itShouldNotMatch('ftp://www.apache.org/',   ['*.apache.org']);
 
-            itShouldMatch('http://www.apache.org:81/', ['http://www.apache.org:81/*']);
-            itShouldMatch('http://user:pass@www.apache.org:81/foo/bar.html', ['http://www.apache.org:81/*']);
-            itShouldNotMatch('http://www.apache.org:80/', ['http://www.apache.org:81/*']);
-            itShouldNotMatch('http://www.apache.org/', ['http://www.apache.org:81/*']);
-            itShouldNotMatch('http://www.apache.org:foo/', ['http://www.apache.org:81/*']);
-            itShouldNotMatch('http://www.apache.org:81@www.apache.org/', ['http://www.apache.org:81/*']);
-            itShouldNotMatch('http://www.apache.org:81@www.evil.com/', ['http://www.apache.org:81/*']);
+            itShouldMatch('http://www.apache.org:81/',                          ['http://www.apache.org:81/*']);
+            itShouldMatch('http://user:pass@www.apache.org:81/foo/bar.html',    ['http://www.apache.org:81/*']);
+            itShouldNotMatch('http://www.apache.org:80/',                       ['http://www.apache.org:81/*']);
+            itShouldNotMatch('http://www.apache.org/',                          ['http://www.apache.org:81/*']);
+            itShouldNotMatch('http://www.apache.org:foo/',                      ['http://www.apache.org:81/*']);
+            itShouldNotMatch('http://www.apache.org:81@www.apache.org/',        ['http://www.apache.org:81/*']);
+            itShouldNotMatch('http://www.apache.org:81@www.evil.com/',          ['http://www.apache.org:81/*']);
 
             itShouldMatch('http://www.APAche.org/', ['*.apache.org']);
             itShouldMatch('http://WWw.apache.org/', ['*.apache.org']);
@@ -143,11 +144,11 @@ exports.defineAutoTests = function () {
             itShouldMatch('HTTP://www.apache.org/', ['http://*.apache.org']);
             itShouldMatch('http://www.apache.org/', ['HTTP://*.apache.org']);
 
-            itShouldMatch('http://www.apache.org/foo/', ['*://*.apache.org/foo/*']);
-            itShouldMatch('http://www.apache.org/foo/bar', ['*://*.apache.org/foo/*']);
-            itShouldNotMatch('http://www.apache.org/bar/foo/', ['*://*.apache.org/foo/*']);
-            itShouldNotMatch('http://www.apache.org/Foo/', ['*://*.apache.org/foo/*']);
-            itShouldNotMatch('http://www.apache.org/Foo/bar', ['*://*.apache.org/foo/*']);
+            itShouldMatch('http://www.apache.org/foo/',         ['*://*.apache.org/foo/*']);
+            itShouldMatch('http://www.apache.org/foo/bar',      ['*://*.apache.org/foo/*']);
+            itShouldNotMatch('http://www.apache.org/bar/foo/',  ['*://*.apache.org/foo/*']);
+            itShouldNotMatch('http://www.apache.org/Foo/',      ['*://*.apache.org/foo/*']);
+            itShouldNotMatch('http://www.apache.org/Foo/bar',   ['*://*.apache.org/foo/*']);
         });
 
         describe("Test function (cordova.whitelist.test) that checks against config.xml", function () {
@@ -199,10 +200,12 @@ exports.defineAutoTests = function () {
             itShouldAccept('http://user:pass@apache.org/');
             itShouldAccept('http://user:pass@www.apache.org/');
             itShouldAccept('https://www.apache.org/');
+
             itShouldReject('ftp://www.apache.org/');
             itShouldReject('http://www.apache.com/');
             itShouldReject('http://www.apache.org:pass@evil.com/');
             itShouldReject('http://www.apache.org.evil.com/');
+
             itShouldAccept('file:///foo');
             if (cordova.platformId == 'android')
                 itShouldReject('content:///foo');
