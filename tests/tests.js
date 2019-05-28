@@ -28,7 +28,7 @@ exports.defineAutoTests = function () {
             expect(cordova.whitelist).toBeDefined();
         });
 
-        describe("Match function (cordova.whitelist.match)", function () {
+        describe("Match function (cordova.whitelist.match) that checks URLs against patterns", function () {
             function expectMatchWithResult(result) {
                 return (function (url, patterns, description) {
                     description = description || ((result ? "should accept " : "should reject ") + url + " for " + JSON.stringify(patterns));
@@ -150,7 +150,7 @@ exports.defineAutoTests = function () {
             itShouldNotMatch('http://www.apache.org/Foo/bar', ['*://*.apache.org/foo/*']);
         });
 
-        describe("Test function (cordova.whitelist.test)", function () {
+        describe("Test function (cordova.whitelist.test) that checks against config.xml", function () {
             function expectTestWithResult(result) {
                 return (function (url, description) {
                     description = description || ((result ? "should accept " : "should reject ") + url);
