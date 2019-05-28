@@ -112,3 +112,4 @@ script:
     else 
       $PARAMEDIC_COMMAND --config ./pr/$PLATFORM --plugin $PARAMEDIC_PLUGIN_TO_TEST --buildName $PARAMEDIC_BUILDNAME; 
     fi
+
