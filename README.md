@@ -100,6 +100,8 @@ On Android, this equates to sending an intent of type BROWSEABLE.
 
 This whitelist does not apply to plugins, only hyperlinks and calls to `window.open()`.
 
+Note: `allow-navigation` takes precedence over `allow-intent`. Allowing navigation to all URLs with `<allow-navigation href="*" />` for example has the side effect of "capturing" all intents, so the webview navigates to them instead of triggering e.g. external apps.
+
 ## Network Request Whitelist
 
 Controls which network requests (images, XHRs, etc) are allowed to be made (via cordova native hooks).
