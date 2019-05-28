@@ -35,15 +35,15 @@ exports.defineAutoTests = function () {
                     this.result = result;
 
                     describe("Match function", function () {
+                        if (!isAndroid) {
+                            pending("Whitelist Plugin only exists for Android");
+                        }
+
                         // Timeout is 7.5 seconds to allow physical devices enough
                         // time to query the response. This is important for some
                         // Android devices.
                         var originalTimeout,
                             cb;
-
-                        if (!isAndroid) {
-                            pending("Whitelist Plugin only exists for Android");
-                        }
 
                         beforeEach(function (done) {
                             originalTimeout = jasmine.DEFAULT_TIMEOUT_INTERVAL;
