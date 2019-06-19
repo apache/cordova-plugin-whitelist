@@ -21,7 +21,7 @@
 
 <plugin xmlns="http://cordova.apache.org/ns/plugins/1.0"
            id="cordova-plugin-whitelist-tests"
-      version="1.3.4">
+      version="1.3.5-dev">
     <name>Cordova Plugin Whitelist Tests</name>
     <license>Apache 2.0</license>
 
