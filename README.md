@@ -148,7 +148,7 @@ On Android, support for CSP within the system webview starts with KitKat (but is
 
 Here are some example CSP declarations for your `.html` pages:
 
-```xml
+```html
 <!-- Good default declaration:
     * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
     * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
