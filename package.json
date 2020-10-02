@@ -7,10 +7,7 @@
       "android"
     ]
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/apache/cordova-plugin-whitelist"
-  },
+  "repository": "github:apache/cordova-plugin-whitelist",
   "bugs": {
     "url": "https://github.com/apache/cordova-plugin-whitelist/issues"
   },
