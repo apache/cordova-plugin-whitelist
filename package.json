@@ -8,9 +8,7 @@
     ]
   },
   "repository": "github:apache/cordova-plugin-whitelist",
-  "bugs": {
-    "url": "https://github.com/apache/cordova-plugin-whitelist/issues"
-  },
+  "bugs": "https://github.com/apache/cordova-plugin-whitelist/issues",
   "keywords": [
     "cordova",
     "whitelist",
