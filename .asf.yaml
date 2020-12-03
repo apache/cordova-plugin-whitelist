@@ -15,6 +15,10 @@
 # specific language governing permissions and limitations
 # under the License.
 
+
+github:
+  description: "[DEPRECATED] Apache Cordova - Whitelist Plugin"
+
 notifications:
   commits:              commits@cordova.apache.org
   issues:               issues@cordova.apache.org
