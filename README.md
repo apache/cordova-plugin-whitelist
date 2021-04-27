@@ -25,6 +25,16 @@ description: Whitelist external content accessible by your app.
 
 This plugin implements a whitelist policy for navigating the application webview on Cordova 4.0
 
+### Deprecation Notice
+
+With the Allow List functionality now integrated into the core of Cordova Android (10.x and greater), this plugin is no longer required.
+
+Existing projects using Cordova Android 10 or greater should remove this plugin with the following command:
+
+```bash
+cordova plugin rm cordova-plugin-whitelist
+```
+
 ## Installation
 
 You can install whitelist plugin with Cordova CLI, from npm:
